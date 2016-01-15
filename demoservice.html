@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<header>
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <script src="angular.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.0/angular-messages.js"></script>
+    <script src="serviceController.js"></script>
+</header>
+<body>
+<div ng-app="serviceApp" ng-controller="serviceController">
+
+    <span class="alert alert-danger">{{name}}</span>
+    <span class="alert alert-danger">{{myMath}}</span>
+    <button class="btn btn-info" ng-click="square()">Do</button>
+</div>
+</body>
+</html>
