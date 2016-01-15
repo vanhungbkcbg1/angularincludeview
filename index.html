@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<header>
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <script src="angular.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.0/angular-messages.js"></script>
+    <script src="validateController.js"></script>
+</header>
+<body>
+<div class="container" ng-app="validateApp" ng-controller="validateController">
+    <div class="row">
+        <div class="col-md-6">
+            <div>
+
+                <form name="myform" role="form" novalidate>
+                    <div class="form-group">
+                        <label for="user_name">Name:</label>
+                        <input name="user_name" ng-model="user_name" type="text" class="form-control" id="user_name"
+                               required ng-minlength="12" ng-maxlength="15">
+
+                        <div ng-messages="myform.user_name.$error">
+                            <p class="label label-danger" ng-message="minlength">Your name is too short.</p>
+
+                            <p class="label label-danger" ng-message="maxlength">Your name is too long.</p>
+
+                            <p class="label label-danger" ng-message="required">Your name is required.</p>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password:</label>
+                        <input name="password" ng-model="password" type="password" class="form-control" id="password">
+                        <span class="label label-danger">this is second error</span>
+                    </div>
+                    <button ng-click="resetFunction()" class="btn btn-success">Clear</button>
+                    <button ng-disabled="myform.user_name.$dirty && myform.user_name.$invalid" class="btn btn-info">
+                        Submit
+                    </button>
+                    <!-- using include view with angularjs-->
+                    <div ng-repeat="x in data">
+                        <div ng-include="'item.html'"></div>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
