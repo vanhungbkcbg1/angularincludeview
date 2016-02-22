@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="angular.js"></script>
+    <script src="ajaxController.js"></script>
+</head>
+<body ng-app="ajaxApp" ng-init="load()" ng-controller="ajaxcontroller">
+<table class="table">
+    <thead>
+    <tr>
+        <th>Name</th>
+        <th>Age</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr ng-repeat="x in students">
+        <td>{{x.name}}</td>
+        <td>{{x.age}}</td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>
